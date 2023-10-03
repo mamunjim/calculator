@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using javascript - Easy Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="calculator">
+    <form>
+      <div class="display">
+        <input type="text" name="display" id="myResult">
+      </div>
+      <div>
+        <input type="button" value="AC" onclick="removeAll()" class="operator">
+        <input type="button" value="DE" onclick="removeOne()" class="operator">
+        <input type="button" value="." onclick="calculator('.')" class="operator">
+        <input type="button" value="/" onclick="calculator('/')" class="operator">
+      </div>
+      <div>
+        <input type="button" value="7" onclick="calculator('7')">
+        <input type="button" value="8" onclick="calculator('8')">
+        <input type="button" value="9" onclick="calculator('9')">
+        <input type="button" value="*" onclick="calculator('*')" class="operator">
+      </div>
+      <div>
+        <input type="button" value="4" onclick="calculator('4')">
+        <input type="button" value="5" onclick="calculator('5')">
+        <input type="button" value="6" onclick="calculator('6')">
+        <input type="button" value="-" onclick="calculator('-')" class="operator">
+      </div>
+      <div>
+        <input type="button" value="1" onclick="calculator('1')">
+        <input type="button" value="2" onclick="calculator('2')">
+        <input type="button" value="3" onclick="calculator('3')">
+        <input type="button" value="+" onclick="calculator('+')" class="operator">
+      </div>
+      <div>
+        <input type="button" value="00" onclick="calculator('00')">
+        <input type="button" value="0" onclick="calculator('0')">
+        <input type="button" value="=" onclick="result('=')" class="equal operator">
+       
+      </div>
+    </form>
+  </div>
+</div>
+
+  <script>
+    function removeAll(){
+      document.getElementById("myResult").value='';
+    }
+    function calculator(newValue){
+      document.getElementById("myResult").value+=newValue;
+    }
+    function result(){
+      var a=eval(document.getElementById("myResult").value);
+      document.getElementById("myResult").value=a;
+    }
+    function removeOne() {
+            const inputElement = document.getElementById("myResult");
+            const currentValue = inputElement.value;
+            if (currentValue.length > 0) {
+                inputElement.value = currentValue.slice(0, -1);
+            }
+        }
+  </script>
+
+</body>
+</html>
